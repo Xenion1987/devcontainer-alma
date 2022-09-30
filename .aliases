@@ -1,0 +1,4 @@
+alias la='ls -lAh'
+alias src='. ~/.zshrc'
+alias dlogin='/bin/bash ~/workspace/ownScripts/mac/ssh-agent.sh'
+alias lg='lazygit'

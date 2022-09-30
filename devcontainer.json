@@ -1,0 +1,46 @@
+{
+    "name": "Almalinux-Bash",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "telemetry.telemetryLevel": "off",
+                "files.eol": "\n",
+                "files.insertFinalNewline": true,
+                "files.autoSave": "off",
+                //"shellformat.path": "/usr/local/bin/shfmt",
+                //"shellcheck.executablePath": "/usr/local/bin/shellcheck",
+                //"bashIde.explainshellEndpoint": "http://localhost:5000",
+                "bashIde.highlightParsingErrors": true,
+                "editor.formatOnSave": false,
+                "editor.guides.bracketPairs": true,
+                "git.autorefresh": true,
+                "git.pullTags": false,
+                "git.confirmSync": false,
+                "git.autofetchPeriod": 90,
+                "git.autofetch": "all",
+                "workbench.iconTheme": "vscode-icons",
+                "workbench.colorTheme": "Monokai Dimmed",
+                "terminal.integrated.scrollback": 10000
+            },
+            "extensions": [
+                "truman.autocomplate-shell",
+                "timonwong.shellcheck",
+                "foxundermoon.shell-format",
+                //"mads-hartmann.bash-ide-vscode",
+                "rogalmic.bash-debug",
+                "sleistner.vscode-fileutils"
+            ]
+        }
+    },
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/workspace,target=/home/vscode/workspace,type=bind,consistency=cached"
+    ]
+    //"workspaceMount": "source=${localEnv:HOME}${localEnv:USERPROFILE}/workspace,target=/home/vscode/workspace,type=bind,consistency=cached",
+    //"workspaceFolder": "/home/vscode/workspace"
+    //"postCreateCommand": "u=vscode && sudo chown -R ${u}:${u} /home/${u}/"
+}
